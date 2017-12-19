@@ -8,4 +8,13 @@
     {{ post.post_excerpt | raw }}
   {% endfor %}
 
+  {% for category in categories %}
+
+  <h2><a href="{{ SITE_URL }}/category.php?slug={{ category.category_slug }}">{{ post.post_title }}</a></h2>
+  <p>{{ post.post_date }}</p>
+  {{ post.post_excerpt | raw }}
+
+
+  {% endfor %}
+
 {% endblock %}

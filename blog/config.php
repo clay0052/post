@@ -4,14 +4,14 @@
 * Update SITE_URL to match your environment
 */
 define("SITE_ROOT", __DIR__);
-define("SITE_URL", "/mtm6331/blog");
+define("SITE_URL", "/mtm6331-group_project/post/blog/");
 
 
 /**
 * DATABASE CONNECTION:
 * This is set up to work on local environment using MAMP.
 */
-$dbname = "mtm6331-blog";
+$dbname = "mtm6331-assignment";
 $dbuser = "root";
 $dbpass = "root";
 $dbhost = "localhost";
