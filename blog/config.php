@@ -4,14 +4,14 @@
 * Update SITE_URL to match your environment
 */
 define("SITE_ROOT", __DIR__);
-define("SITE_URL", "/mtm6331-group_project/post/blog/");
+define("SITE_URL", "/post/blog");
 
 
 /**
 * DATABASE CONNECTION:
 * This is set up to work on local environment using MAMP.
 */
-$dbname = "mtm6331-assignment";
+$dbname = "mtm6331-blog";
 $dbuser = "root";
 $dbpass = "root";
 $dbhost = "localhost";
@@ -35,7 +35,7 @@ try {
 require_once SITE_ROOT.'/vendor/autoload.php';
 $loader = new Twig_Loader_Filesystem(SITE_ROOT.'/templates');
 $twig = new Twig_Environment($loader, array(
-  'cache' => SITE_ROOT.'/cache',
+//  'cache' => SITE_ROOT.'/cache',
   'auto_reload' => true
 ));
 
