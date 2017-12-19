@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+
+  {% for post in posts %}
+    <h2><a href="{{ SITE_URL }}/post.php?slug={{ post.post_slug }}">{{ post.post_title }}</a></h2>
+    <p>{{ post.post_date }}</p>
+    {{ post.post_excerpt | raw }}
+  {% endfor %}
+
+{% endblock %}
