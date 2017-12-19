@@ -57,6 +57,7 @@ class __TwigTemplate_135ced829da7268316009a3c02eda597aa986749ca8f13cc1341fcdd790
         $context = array_intersect_key($context, $_parent) + $_parent;
         // line 10
         echo "
+<<<<<<< HEAD
   ";
         // line 11
         $context['_parent'] = $context;
@@ -89,6 +90,8 @@ class __TwigTemplate_135ced829da7268316009a3c02eda597aa986749ca8f13cc1341fcdd790
         $context = array_intersect_key($context, $_parent) + $_parent;
         // line 19
         echo "
+=======
+>>>>>>> 53d3a3e8fa08336d3ba3ba32ecc6e7eaba278efa
 ";
     }
 
@@ -104,11 +107,19 @@ class __TwigTemplate_135ced829da7268316009a3c02eda597aa986749ca8f13cc1341fcdd790
 
     public function getDebugInfo()
     {
+<<<<<<< HEAD
         return array (  91 => 19,  81 => 15,  77 => 14,  69 => 13,  66 => 12,  62 => 11,  59 => 10,  51 => 8,  47 => 7,  38 => 6,  34 => 5,  31 => 4,  28 => 3,  11 => 1,);
+=======
+        return array (  59 => 10,  51 => 8,  47 => 7,  38 => 6,  34 => 5,  31 => 4,  28 => 3,  11 => 1,);
+>>>>>>> 53d3a3e8fa08336d3ba3ba32ecc6e7eaba278efa
     }
 
     public function getSourceContext()
     {
+<<<<<<< HEAD
         return new Twig_Source("", "list.html.twig", "C:\\MAMP\\htdocs\\mtm6331-group_project\\post\\blog\\templates\\list.html.twig");
+=======
+        return new Twig_Source("", "list.html.twig", "C:\\MAMP\\htdocs\\post\\blog\\templates\\list.html.twig");
+>>>>>>> 53d3a3e8fa08336d3ba3ba32ecc6e7eaba278efa
     }
 }

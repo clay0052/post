@@ -65,6 +65,10 @@ class __TwigTemplate_42e37102682a1d4697b68dcef35cd11e0d0e1d229d7b2f02afd9006acbd
 
     public function getSourceContext()
     {
+<<<<<<< HEAD
         return new Twig_Source("", "base.html.twig", "C:\\MAMP\\htdocs\\mtm6331-group_project\\post\\blog\\templates\\base.html.twig");
+=======
+        return new Twig_Source("", "base.html.twig", "C:\\MAMP\\htdocs\\post\\blog\\templates\\base.html.twig");
+>>>>>>> 53d3a3e8fa08336d3ba3ba32ecc6e7eaba278efa
     }
 }

@@ -13,30 +13,32 @@ $page = [];
 * If not, redirect to the index page.
 * NOTE: Replace true with the condition.
 */
-if (true) {
+if(isset($_GET['slug'])) {
 
   /**
   * 2. Create a Prepared Statment to SELECT the post WHERE the slug EQUALS
   * an anonymous variable.
   */
-
+$sql = "SELECT * FROM posts WHERE post_slug = ?";
 
 
   /**
   * 3. Send the Prepared Statement to the Database
   * NOTE: Replace false with command to send the Prepared Statement.
   */
-  $stmt = false;
+  $stmt = $pdo->prepare($sql);
 
   /**
   * 4. Create an array to hold the value of the anonymous variable
   */
-
+$values = [
+  $_GET['slug']
+];
 
   /**
   * 5. Execute the Prepared Statement with the array holding the value of the anonymous variable
   */
-
+$result = $stmt->execute($values);
 
   /**
   * Checking for SQL Errors return from the Database.
@@ -47,35 +49,35 @@ if (true) {
   * 6. Fetch the post from the excuted statement.
   * Return an associative array
   */
-
+$post = $stmt->fetch(PDO::FETCH_ASSOC);
 
   /**
   * 7. Check if a post was returned.
   * NOTE: If no row was return the fetch method will return false
   * NOTE: Replace true with the condition to check if a post was returned
   */
-  if (true) {
+  if ($post) {
     /**
     * 8. Create a SQL query to SELECT the category WHERE the category ID EQUALS
     * the category ID from the post.
     */
-
+    $sql = "SELECT category_id FROM posts";
 
     /**
     * 9. Send the SQL query to the Database using the PDO Object
     */
-
+$stmt = $pdo->prepare($sql);
 
     /**
     * 10. Fetch the result returned from the Database.
     * Return an associative array
     */
-
+$post = $stmt->fetch(PDO::FETCH_ASSOC);
 
     /**
     * 11. Add a "title" index to the $page array with the value of the post title
     */
-
+$post["title"] = 'title';
 
     /**
     * 12. Load the twig template for displaying the post
@@ -90,11 +92,11 @@ if (true) {
     /**
     * 14. Include error.php
     */
-
+$template = $twig->load('error.html.twig');
   }
 } else {
   /**
   * 15. Redirect to the index page.
   */
-
+$template = $twig->load('post.html.twig');
 }
