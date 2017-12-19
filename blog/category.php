@@ -62,9 +62,7 @@ $category = $stmt->fetch(PDO::FETCH_ASSOC);
     /**
     * 8. Add a "title" index to the $page array with the value of the category name
     */
-$page = [
-  "title" => "Category name"
-];
+$category['name'] = 'title';
 
     /**
     * 9. Create a Prepared Statment to SELECT the posts WHERE the post category id
@@ -96,9 +94,7 @@ $sql = "SELECT * FROM posts WHERE category_id = ".$category['id'];
     /**
     * 14. Include error.php
     */
-    $category = trim($_GET['category']);
 
-    header("HTTP/1.0 404 Not Found");
 
     $template = $twig->load('error.html.twig');
     echo $template->render(["category"=>$category]);
@@ -109,5 +105,5 @@ $sql = "SELECT * FROM posts WHERE category_id = ".$category['id'];
   * 15. Redirect to the index page.
   */
   $template = $twig->load('post.html.twig');
-  echo $template->render(["categorys" => $categorys]);
+
 }
