@@ -20,9 +20,7 @@ if (isset($_GET['slug'])) {
   * 2. Create a Prepared Statment to SELECT the category WHERE the slug EQUALS
   * an anonymous variable.
   */
-$sql = "SELECT category_id AS id,
-category_slug AS slug,
-category_name AS name
+$sql = "SELECT *
 FROM categories
 WHERE category_slug = ?";
 
@@ -36,7 +34,7 @@ WHERE category_slug = ?";
   * 4. Create an array to hold the value of the anonymous variable
   */
 
-$values = [remove_underscore($_GET['category'])];
+$values = [$_GET['slug']];
   /**
   * 5. Execute the Prepared Statement with the array holding the value of the anonymous variable
   */
@@ -62,13 +60,13 @@ $category = $stmt->fetch(PDO::FETCH_ASSOC);
     /**
     * 8. Add a "title" index to the $page array with the value of the category name
     */
-$category['name'] = 'title';
+$page["title"] = $category['category_name'];
 
     /**
     * 9. Create a Prepared Statment to SELECT the posts WHERE the post category id
     * EQUALS category_id from $category.
     */
-$sql = "SELECT * FROM posts WHERE category_id = ".$category['id'];
+$sql = "SELECT * FROM posts WHERE category_id = ".$category['category_id'];
 
     /**
     * 10. Send the SQL query to the Database using the PDO Object
@@ -79,7 +77,7 @@ $sql = "SELECT * FROM posts WHERE category_id = ".$category['id'];
     * 11. Fetch all the results returned from the Database.
     * Return an associative array
     */
-    $category = $result->fetchAll(PDO::FETCH_ASSOC);
+    $posts = $result->fetchAll(PDO::FETCH_ASSOC);
 
     /**
     * 12. Load the twig template for displaying the list of posts
@@ -89,7 +87,7 @@ $sql = "SELECT * FROM posts WHERE category_id = ".$category['id'];
     /**
     * 13. Render the template with the posts returned from the database and the $page array.
     */
-    echo $template->render(['category' => $category]);
+    echo $template->render(['posts' => $posts, "page" => $page]);
   } else {
     /**
     * 14. Include error.php

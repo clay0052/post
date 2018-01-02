@@ -1,5 +1,9 @@
 {% extends 'base.html.twig' %}
 
 {% block content %}
-<h1>Post Page</h1>
+<h1>{{post.post_title}}</h1>
+<p>{{post.post_date}}</p>
+<p><a href="category.php?slug={{category.category_slug}}">{{category.category_name}}</a></p>
+<p>{{post.post_body | raw}}</p>
+<a href="index.php"><button type="button" name="error">Edit</button></a>
 {% endblock %}
