@@ -14,7 +14,7 @@ define("SITE_URL", "/post/blog");
 $dbname = "mtm6331-blog";
 $dbuser = "root";
 $dbpass = "root";
-$dbhost = "localhost";
+$dbhost = "localhost:8889";
 
 /**
 * CREATING PDO OBJECT
