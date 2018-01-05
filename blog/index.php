@@ -11,6 +11,7 @@ require_once "config.php";
 */
 $page = [
   "title" => "My Blog"
+  
 ];
 
 /**
