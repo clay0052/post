@@ -22,7 +22,9 @@ if (isset($_POST['slug'])) {
   * NOTE: post_date is automatically set by database, and does not need to
   * be included in the prepared statement.
   */
-
+$sql = "UPDATE `posts` SET `post_id`=[value-1],`post_slug`=[value-2],`post_title`=[value-3],
+`post_date`=[value-4],`post_excerpt`=[value-5],`post_body`=[value-6],`category_id`=[value-7]
+ WHERE 1";
 
 
   /**

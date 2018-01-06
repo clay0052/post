@@ -5,5 +5,5 @@
 <p>{{post.post_date}}</p>
 <p><a href="category.php?slug={{category.category_slug}}">{{category.category_name}}</a></p>
 <p>{{post.post_body | raw}}</p>
-<a href="index.php"><button type="button" name="error">Edit</button></a>
+<a href="edit.php?slug= {{ post.post_slug }}"><button type="button" name="error">Edit</button></a>
 {% endblock %}
